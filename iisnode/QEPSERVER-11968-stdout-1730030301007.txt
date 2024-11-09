@@ -1,0 +1,33 @@
+> Ready on http://localhost:\\.\pipe\5b875cb0-5c9f-4b11-90fd-918b7259cf03
+{
+  user: {
+    name: 'Afro',
+    email: 'afro@gmail.com',
+    image: 'https://res.cloudinary.com/www-qepweb-es/image/upload/v1727618719/mu3a5rboxd7hngtfjfch.png',
+    role: 'ADMIN',
+    id: '66d8a4602796cc2cecaa5fda'
+  },
+  expires: '2024-11-26T11:58:32.513Z'
+}
+currentUser  {
+  id: '66d8a4602796cc2cecaa5fda',
+  name: 'Afro',
+  email: 'afro@gmail.com',
+  emailVerified: null,
+  image: 'https://res.cloudinary.com/www-qepweb-es/image/upload/v1727618719/mu3a5rboxd7hngtfjfch.png',
+  hashedPassword: '$2b$12$8Kzo1xwMEpCybpc9qA.2Nevo9s.QZ6Eje4GjUn.3d9XFRm/KiFJpq',
+  createdAt: '2024-09-04T18:18:08.877Z',
+  updatedAt: '2024-09-29T14:05:33.136Z',
+  role: 'ADMIN'
+}
+{
+  user: {
+    name: 'Afro',
+    email: 'afro@gmail.com',
+    image: 'https://res.cloudinary.com/www-qepweb-es/image/upload/v1727618719/mu3a5rboxd7hngtfjfch.png',
+    role: 'ADMIN',
+    id: '66d8a4602796cc2cecaa5fda'
+  },
+  expires: '2024-11-26T11:58:52.063Z'
+}
+66d8a4602796cc2cecaa5fda

@@ -1,19 +1,23 @@
 import { auth } from "@/auth";
-import LogoutButton from "@/components/logout-button";
+import getSession from "@/lib/getSession";
+import { redirect } from "next/navigation";
 
 const AdminPage = async () => {
-  const session = await auth();
-
+  const session = await getSession();
+  const user = session?.user;
   console.log(session);
-
-  if (session?.user?.role !== "admin") {
-    return <div>You are not admin</div>;
+  console.log(session?.user.id);
+  if (!user) {
+    redirect("/login");
+  }
+  if (session?.user?.role !== "ADMIN") {
+    return <div>No eres administrador</div>;
   }
 
   return (
-    <div className="container">
+    <div className="container text-black">
       <pre>{JSON.stringify(session, null, 2)}</pre>
-      <LogoutButton />
+     
     </div>
   );
 };

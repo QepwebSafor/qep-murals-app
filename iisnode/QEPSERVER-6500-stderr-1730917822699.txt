@@ -1,0 +1,17 @@
+(node:6500) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: Error: No user found
+    at Object.authorize (C:\Users\Quica\parkingesomacom4\.next\server\app\(auth)\register\page.js:1:11383)
+    at async iI (C:\Users\Quica\parkingesomacom4\.next\server\chunks\548.js:388:36868)
+    at async iZ (C:\Users\Quica\parkingesomacom4\.next\server\chunks\548.js:388:45997)
+    at async iF (C:\Users\Quica\parkingesomacom4\.next\server\chunks\548.js:388:50436)
+    at async i5 (C:\Users\Quica\parkingesomacom4\.next\server\chunks\548.js:388:55536)
+    at async m (C:\Users\Quica\parkingesomacom4\.next\server\app\(auth)\register\page.js:1:9557)
+    at async C:\Users\Quica\parkingesomacom4\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:16:418
+    at async rT (C:\Users\Quica\parkingesomacom4\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:15:8148)
+    at async ne (C:\Users\Quica\parkingesomacom4\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:18:1144)
+    at async doRender (C:\Users\Quica\parkingesomacom4\node_modules\next\dist\server\base-server.js:1406:30)
+[31m[auth][details][0m: {
+  "provider": "credentials"
+}

@@ -1,57 +1,96 @@
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
 generator client {
   provider = "prisma-client-js"
 }
 
-enum Role {
-  user
-  admin
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  password      String?
-  emailVerified DateTime?
-  image         String?
-  role          Role      @default(user)
+model questions {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Field referred in an index, but found no data to define the type.
+  email Json?  @unique(map: "email_1")
+}
 
-  accounts Account[]
+model tasks {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Field referred in an index, but found no data to define the type.
+  title Json?  @unique(map: "title_1")
+}
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model topics {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  v           Int      @map("__v")
+  createdAt   DateTime @db.Date
+  description String
+  title       String
+  updatedAt   DateTime @db.Date
 }
 
 model Account {
-  userId            String
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String?
-  access_token      String?
+  refresh_token     String? @db.String
+  access_token      String? @db.String
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String?
-  session_state     String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id_token          String? @db.String
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@id([provider, providerAccountId])
+  @@unique([provider, providerAccountId])
 }
 
-model VerificationToken {
-  identifier String   @unique
-  token      String
-  expires    DateTime
+enum Role {
+  USER
+  ADMIN
+}
 
-  @@id([identifier])
+model User {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String?   @unique
+  emailVerified  DateTime?
+  image          String?
+  hashedPassword String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  role           Role      @default(USER)
+  accounts       Account[]
+  comments       Comment[]
+}
+
+model Contact {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  postername String
+  message    String
+  email      String
+  topic      String
+  createdAt  DateTime @default(now())
+}
+
+model Comment {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  createdAt   DateTime @default(now())
+  userEmail   String
+  description String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String   @db.ObjectId
+  likedIds    String[] @db.ObjectId
+}
+
+model Todo {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  body      String?
+  completed Boolean  @default(false)
+  user_id   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

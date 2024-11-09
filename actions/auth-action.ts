@@ -2,6 +2,7 @@
 
 import { signIn } from "@/auth";
 import { db } from "@/lib/db";
+import { revalidatePath } from "next/cache";
 import { loginSchema, registerSchema } from "@/lib/zod";
 import bcrypt from "bcryptjs";
 import { AuthError } from "next-auth";
@@ -13,14 +14,18 @@ export const loginAction = async (values: z.infer<typeof loginSchema>) => {
       email: values.email,
       password: values.password,
       redirect: false,
+     
     });
+    
     return { success: true };
+   
   } catch (error) {
     if (error instanceof AuthError) {
       return { error: error.cause?.err?.message };
     }
     return { error: "error 500" };
   }
+  revalidatePath("/");
 };
 
 export const registerAction = async (
@@ -68,7 +73,7 @@ export const registerAction = async (
       data: {
         email: data.email,
         name: data.name,
-        password: passwordHash,
+        hashedPassword: passwordHash,
       },
     });
 

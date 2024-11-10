@@ -22,20 +22,20 @@ const Navbar = async () => {
   // Opcional: Si deseas ver cuando se ejecuta la llamada a /api/auth/session
 
   return (
-    <nav className="bg-lime-700  ">
+    <nav className="bg-lime-700 ">
       <div className="container  flex  ">
       <Link href="/">
           <div className=" flex-shrink-0 flex items-center">
             <Image
-              src="/img/pnglogoxxxs.fw.png"
-              alt="Esoma"
+              src="/img/pnglogoxs.fw.png"
+              alt="Qep"
               width={44}
               height={44}
               className="navbar-brand w-auto"
             />
 
             {currentUser ? (
-              <h3 className="px-3 py-6">Hola, {currentUser.name}</h3>
+              <h3 className="px-3 py-6">Hello, {currentUser.name}</h3>
             ) : (
               <h3 className="px-3 py-6">QEP Dogs App</h3>
             )}

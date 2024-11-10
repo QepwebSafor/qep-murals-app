@@ -121,7 +121,7 @@ li {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  margin-right: 0.2rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
@@ -134,7 +134,7 @@ li {
 .navbar-brand img {
   display: inline-block;
   height: 3rem;
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
   vertical-align: middle;
   text-decoration:none;
 }

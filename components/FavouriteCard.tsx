@@ -27,7 +27,7 @@ const FavouriteCard: React.FC<RandomCardProps> = ({ favourite }) => {
         alt={favourite.image_id}
         height="320"
         key={favourite.id}
-        className=" py-1 object-top  rounded-sm border border-double border-black shadow-md shadow-black  "
+        className=" object-top  rounded-sm border border-double border-black shadow-md shadow-black  "
       />
       <div className=" mx-auto flex  justify-center mt-6">
         <Button onClick={() => onDeleteFavorite(favourite.id)}>

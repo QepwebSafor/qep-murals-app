@@ -16,9 +16,9 @@ const user = session?.user;
   }
 
   return (
-    <div className="mx-auto max-w-fit">
-    <h1> Lista de Usuarios</h1>
-    <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 ">
+    <div className="container-fluid ">
+     <h1 className="m-1">Users List</h1>
+     <div className="grid md:grid-cols-3   sm:grid-cols-2  xs:grid-cols-1 lg:grid-cols-4">
     {users.map((item: any) => ( user &&
           (<SingleUser key={item.id} data={item} />)
         ))}

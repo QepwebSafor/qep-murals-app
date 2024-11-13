@@ -52,9 +52,9 @@ const AddTodoForm = ({ userId }: { userId: string | null }) => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild className="ml-auto">
+      <DialogTrigger asChild className="ml-auto flex">
         <Button>
-          <Plus size={14} className="mr-1" />
+          <Plus size={14} className="mr-1 " />
           New Todo
         </Button>
       </DialogTrigger>
@@ -92,7 +92,7 @@ const AddTodoForm = ({ userId }: { userId: string | null }) => {
                         {...field}
                       />
                     </FormControl>
-                    <FormDescription className="text-black">
+                    <FormDescription className="text-white">
                       You can write a short description about your next todo.
                     </FormDescription>
                     <FormMessage />
@@ -112,9 +112,9 @@ const AddTodoForm = ({ userId }: { userId: string | null }) => {
                           onCheckedChange={field.onChange}
                         />
                       </FormControl>
-                      <FormLabel>Completed</FormLabel>
+                      <FormLabel className="text-sky-500">Completed</FormLabel>
                     </div>
-                    <FormDescription className="text-black">
+                    <FormDescription className="text-white">
                       Your to-do item will be uncompleted by default unless you
                       checked it.
                     </FormDescription>

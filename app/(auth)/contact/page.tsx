@@ -51,8 +51,7 @@ const AddContactForm = () => {
   };
 
   return (
-    <div className="  lg:max-w-fit md:max-w-fit sm:max-w-fit xs:max-w-fit w-full mx-auto md:rounded-2xl px-6 font-bold  py-2 shadow-input
-     bg-lime-700 border border-[hsl(71,77%,58%)] ">
+    <div className="container md:rounded-2xl bg-zinc-900 px-10 py-4 mt-5 shadow-md shadow-black w-full md:w-2/4 sm:w-2/3 lg:w-1/3 mx-auto">
       
       <h3 className="text-2xl mx-auto m-4">Send a message</h3>
       <Form {...form}>

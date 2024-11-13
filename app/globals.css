@@ -5,12 +5,12 @@
 
 @layer base {
   :root {
-    --background: 58 83% 59%;
-    --foreground: 240 10% 3.9%;
+    --background: 195 4% 20%;
+    --foreground: 195 4% 20%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 58 83% 59%;
-    --popover-foreground: 99 84% 20%;
+    --card-foreground: 197 76% 49%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 197 76% 49%;
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
@@ -19,9 +19,9 @@
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
+    --destructive: 0 78% 49%;
+    --destructive-foreground: 0 27% 91%;
+    --border: 0 0% 10%;
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
@@ -32,11 +32,7 @@
     --chart-5: 27 87% 67%;
   }
 
-  body {
-
-    @apply bg-yellow-200;
-    @apply text-yellow-300;
-  }
+ 
   
   
   
@@ -60,6 +56,11 @@
       transform: scale(2);
     }
   }
+  @layer hover {
+    .zoom {
+      transform: scale(2);
+    }
+  }
   @layer components {
     .alert {
       @apply py-2 px-4 font-semibold rounded-lg shadow-md hover:bg-gray-900  p-5 m-6;
@@ -74,49 +75,133 @@
       @apply  bg-yellow-200   text-yellow-600 hover:bg-yellow-600 hover:text-yellow-200 border border-yellow-800;
     }
     .alert-info{
-      @apply  bg-lime-200   text-lime-900 hover:bg-lime-500 hover:text-lime-200 border border-lime-800;
+      @apply  bg-sky-200   text-sky-900 hover:bg-sky-500 hover:text-sky-200 border border-sky-800;
     }
   }
   h1 {
 
-    @apply  text-lime-900 font-bold text-center text-4xl m-3;
+    @apply text-2xl text-sky-500 m-2 font-semibold text-center;
   }
   h2 {
 
-    @apply text-2xl text-lime-800 font-semibold text-center;
+    @apply text-2xl text-sky-500  text-left;
   }
   h3 {
 
-    @apply text-2xl text-yellow-200 font-semibold  text-center;
+    @apply  text-sky-400  text-left;
   }
   h4 {
 
-    @apply text-2xl  font-semibold;
+    @apply text-2xl ;
   }
   h5 {
 
-    @apply text-2xl  text-lime-900 font-bold text-center;
+    @apply  text-yellow-200 font-semibold text-left;
   }
   h6 {
 
-    @apply  text-lime-100 font-semibold;
+    @apply  text-gray-900 font-bold text-left ;
   }
+
   p {
 
-    @apply  text-black font-semibold;
+    @apply  text-sky-100 font-semibold text-left;
   }
 span {
 
-  @apply   text-lime-800 
+  @apply   text-sky-600 
 }
-
+body {
+  @apply bg-zinc-800;
+  @apply text-slate-100;
+}
 label {
 
-  @apply  text-sm block font-semibold  text-yellow-200 mb-2 mt-2;
+  @apply  text-sky-200 font-semibold;
 }
-li {
-  @apply  hover:text-lime-500 px-1 py-1  text-yellow-300 hover:underline;
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+ 
 }
+
+.navbar-brand img {
+  display: inline-block;
+  height: 3rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  text-decoration:none;
+}
+/* ajustar la altura de las diapositivas */
+
+.movieDetail-score {
+  display: inline-block;
+  text-align: right;
+  width: 30%;
+  font-weight: bold;
+}
+.movieDetail-score::before {
+  content: '★';
+  color: red;
+  padding-right: 4px;
+  font-size:larger;
+}
+/* Categories */
+.category-container {
+  width: 45%;
+}
+
+.categoriesPreview-list, .categories-list {
+  display:inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+}
+.category-title {
+  margin-bottom: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-title::before {
+  content: '••••';
+  color: transparent;
+  /* TODO: cambiar color por ID de la categoría */
+  background-color: #0284c7;
+  border-radius: 7px;
+  margin-right: 8px;
+  width: 7px;
+  height: 7px;
+}
+#id28 { --idColor: var(--red-600); }
+#id12 { --idColor: var(--red); }
+#id16 { --idColor: var(--green); }
+#id35 { --idColor: var(--lightBlue); }
+#id80 { --idColor: var(--darkBlue); }
+#id99 { --idColor: var(--purple-dark-1); }
+#id18 { --idColor: var(--purple-medium-1); }
+#id10751 { --idColor: var(--yellow); }
+#id14 { --idColor: var(--red); }
+#id36 { --idColor: var(--green); }
+#id27 { --idColor: var(--lightBlue); }
+#id10402 { --idColor: var(--darkBlue); }
+#id9648 { --idColor: var(--purple-dark-1); }
+#id10749 { --idColor: var(--purple-medium-1); }
+#id878 { --idColor: var(--yellow); }
+#id10770 { --idColor: var(--red); }
+#id53 { --idColor: var(--green); }
+#id10752 { --idColor: var(--lightBlue); }
+#id37 { --idColor: var(--darkBlue); }
+
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;

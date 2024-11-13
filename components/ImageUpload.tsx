@@ -26,7 +26,7 @@ console.log('value', value)
 
   return (
     <CldUploadWidget
-      uploadPreset="ajukal8h"
+      uploadPreset="ml_default"
       options={{ maxFiles: 1 }}
      
       onSuccess={handleUpload} // Uso de onSuccess también por compatibilidad con la biblioteca actual

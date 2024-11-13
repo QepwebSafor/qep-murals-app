@@ -60,22 +60,22 @@ export default function UserEditForm({
 
   return (
     <div className="container  mt-5 md:rounded-2xl  shadow-md shadow-black -inset-40 w-full sm:max-w-fit md:max-w-fit  mx-auto border border-[#121212] ">
-      <h1 className=" text-center text-2xl">Editar perfil</h1>
+      <h1 className=" text-center text-2xl">Edit user</h1>
 
       <form onSubmit={onSubmit}>
        
-          <div className=" text-left  min-h-fit">
-            <Label htmlFor="name" className=" m-4 ">
-              <h5> Cambiar el avatar:</h5>
+          <div className=" text-left  ">
+            <Label htmlFor="name" className=" m-1 ">
+              <h5> Change avatar:</h5>
             </Label>
             <ImageUpload
               value={state.image as string}
               onChange={(value) => setCustomValue("image", value)}
             />
           </div>
-          <div className=" text-left  min-h-fit ">
+          <div className=" text-left text-black">
             <Label htmlFor="name" className=" m-1">
-              <h5>Cambiar nombre:</h5>
+              <h5>Change name:</h5>
             </Label>
             <Input
               placeholder="Name"
@@ -86,7 +86,7 @@ export default function UserEditForm({
               onChange={handleChange}
             />
             <Label htmlFor="email" className=" m-1">
-              <h5>Cambiar Email:</h5>
+              <h5>Change Email:</h5>
             </Label>
             <Input
               placeholder="Email"
@@ -97,7 +97,7 @@ export default function UserEditForm({
               onChange={handleChange}
             />
             <div></div>
-            <div className="flex justify-end text-left p-4 ">
+            <div className="flex justify-end text-left p-2 ">
               <Button
                 type="submit"
                 className=" uppercase text-sky-300 hover:text-white"

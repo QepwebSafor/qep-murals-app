@@ -1,7 +1,12 @@
-
-
 import avatarPlaceholder from "@/assets/images/avatar_placeholder.png";
-import {  UserRound, UserRoundPlus , MessageCircle, Dog , PawPrint } from "lucide-react";
+import {
+  UserRound,
+  UserRoundPlus,
+  MessageCircle,
+  Clapperboard,
+  Search,
+  ListEnd
+} from "lucide-react";
 import Image from "next/image";
 import getCurrentUser from "@/actions/getCurrentUser";
 import Link from "next/link";
@@ -18,26 +23,26 @@ import UserButton from "./UserButton";
 const Navbar = async () => {
   const currentUser = await getCurrentUser();
 
-
   // Opcional: Si deseas ver cuando se ejecuta la llamada a /api/auth/session
 
   return (
-    <nav className="bg-lime-700 ">
+    <nav className="bg-zinc-900">
       <div className="container  flex  ">
-      <Link href="/">
-          <div className=" flex-shrink-0 flex items-center">
+        <Link href="/">
+          <div className=" flex-shrink-0 flex items-center m-2">
             <Image
               src="/img/pnglogoxs.fw.png"
               alt="Qep"
               width={44}
               height={44}
+              priority
               className="navbar-brand w-auto"
             />
 
             {currentUser ? (
               <h3 className="px-3 py-6">Hello, {currentUser.name}</h3>
             ) : (
-              <h3 className="px-3 py-6">QEP Dogs App</h3>
+              <h3 className="px-3 py-6">QEP Movies App</h3>
             )}
           </div>
         </Link>
@@ -53,52 +58,55 @@ function SignInButton() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon" className="flex-none rounded-full  ">
+        <button   className="flex-none rounded-full  mb-5 ">
           <Image
             src={avatarPlaceholder}
             alt="User profile picture"
             width={50}
             height={50}
-            className="aspect-square rounded-full  object-cover "
+            className="aspect-square rounded-full w-10 h-10  object-cover "
           />
-        </Button>
+        </button>
       </DropdownMenuTrigger>
-
       <DropdownMenuContent className="w-56 ">
         <DropdownMenuGroup>
+       
+          <DropdownMenuItem asChild>
+            <Link href="/movies">
+              <Clapperboard className="mr-2 h-4 w-4" />
+              Trends
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/categories">
+              <ListEnd className="mr-2 h-4 w-4" />
+              Categories
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/search">
+              <Search className="mr-2 h-4 w-4" />
+              Search
+            </Link>
+          </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link href="/login">
               <UserRound className="mr-2 h-4 w-4" />
-              Acceso
+              Sign In
             </Link>
           </DropdownMenuItem>
-
           <DropdownMenuItem asChild>
             <Link href="/register">
               <UserRoundPlus className="mr-2 h-4 w-4" />
-              Registro
+              Sign Up
             </Link>
           </DropdownMenuItem>
-      
-      
-        <DropdownMenuItem asChild>
+          <DropdownMenuItem asChild>
             <Link href="/contact">
-            <MessageCircle  className="mr-2 h-4 w-4" />
-              Contacto
+              <MessageCircle className="mr-2 h-4 w-4" />
+              Contact
             </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/breeds">
-            <Dog   className="mr-2 h-4 w-4" />
-              Breeds
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/random">
-            <PawPrint   className="mr-2 h-4 w-4" />
-              Random
-            </Link>
-          </DropdownMenuItem>
+            </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>

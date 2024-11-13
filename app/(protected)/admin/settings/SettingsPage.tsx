@@ -55,8 +55,8 @@ export default function SettingsPage({ user }: SettingsPageProps) {
   }
 
   return (
-    <div className="container block  md:rounded-2xl px-6 py-4 shadow-input   ">
-    <div className="justify-between  ">
+    <div className="container block  md:rounded-2xl  shadow-input   ">
+    <div className="justify-between items-center ">
       <Button
         onClick={() => setOnActive(!onActive)}
         className="uppercase text-white hover:text-violet-500 text-2xl"

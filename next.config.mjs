@@ -12,8 +12,11 @@ const nextConfig = {
         hostname: "avatars.githubusercontent.com"
       },
       {
-        hostname: "cdn2.thedogapi.com"
-      }
+        hostname: "themoviedb.or",
+      },
+      {
+        hostname: "image.tmdb.org",
+      },
     ],
   },
 };

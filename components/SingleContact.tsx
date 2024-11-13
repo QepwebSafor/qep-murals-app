@@ -17,7 +17,7 @@ function SingleContact({ key, data }: ContactProps) {
 
   return (
     <div
-      className="flex w-full sm:min-w-fit md:min-w-fit lg:min-w-fit gap-x-4   shadow-md shadow-black border border-yellow-300 text-black  "
+      className="flex w-full sm:min-w-fit md:min-w-fit lg:min-w-fit gap-x-4   shadow-md shadow-black border border-sky-500 text-black bg-zinc-900 "
       key={data.id}
     >
       <div className=" flex flex-col items-start justify-between  m-4">
@@ -47,9 +47,9 @@ function SingleContact({ key, data }: ContactProps) {
         </p>
 
         <div className="flex items-center gap-4 m-3  ">
-          <h6 className="text-black">
+          <h5>
             {dayjs(data.createdAt).format("MMMM D YYYY")}
-          </h6>
+          </h5>
 
           <Button
             size={"icon"}

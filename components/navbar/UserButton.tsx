@@ -1,10 +1,11 @@
 "use client";
 import avatarPlaceholder from "@/assets/images/avatar_placeholder.png";
-import { Lock,  Settings , MessageCircle, Dog} from "lucide-react";
+import { Lock, Settings, MessageCircle, Dog } from "lucide-react";
 import { User } from "next-auth";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import {  LogOut} from "lucide-react";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import {
@@ -27,7 +28,7 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon" className="flex-none rounded-full  ">
+        <button   className="flex-none rounded-full object-top mb-5 ">
           <Image
             src={user.image || avatarPlaceholder}
             alt="User profile picture"
@@ -36,25 +37,17 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
             priority
             className="aspect-square rounded-full  object-cover "
           />
-        </Button>
+        </button>
       </DropdownMenuTrigger>
       {user && (
         <DropdownMenuContent className="w-56 ">
           <DropdownMenuLabel>{user.name || "User"}</DropdownMenuLabel>
-          <DropdownMenuSeparator />
+          <DropdownMenuSeparator className="bg-sky-400" />
           <DropdownMenuGroup>
-            
-          {/*   <DropdownMenuItem asChild>
-              <Link href="/admin/profile">
-                <UserRound className="mr-2 h-4 w-4" />
-                <span>Profile</span>
-              </Link>
-            </DropdownMenuItem> */}
             <DropdownMenuItem asChild>
               <Link href="/admin/settings">
-                <Settings className="mr-2 h-4 w-4 "/>
-                Perfil
-             
+                <Settings className="mr-2 h-4 w-4 " />
+                Profile
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
@@ -63,60 +56,36 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
                 Todos
               </Link>
             </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/favourites">
-                <Dog className="mr-2 h-4 w-4" />
-                Favourites
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/uploadDogs">
-                <Dog className="mr-2 h-4 w-4" />
-                Uploads
-              </Link>
-            </DropdownMenuItem>
             {user.role === "ADMIN" && (
               <>
-                <DropdownMenuItem asChild>
-                  <Link href="/admin">
-                    <Lock className="mr-2 h-4 w-4" />
-                    Administrador
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/admin/dashboard">
-                    <Lock className="mr-2 h-4 w-4" />
-                    Panel de control
-                  </Link>
-                </DropdownMenuItem>
+           
                 <DropdownMenuItem asChild>
                   <Link href="/admin/users">
                     <Lock className="mr-2 h-4 w-4" />
-                    Usuarios
+                    Users
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/admin/messages">
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    Mensajes
+                    Messages
                   </Link>
                 </DropdownMenuItem>
               </>
             )}
           </DropdownMenuGroup>
-          <DropdownMenuSeparator />
+      
           <DropdownMenuItem asChild>
             <div
-               onClick={() => {
-
+              onClick={() => {
                 signOut({ redirect: false }).then(() => {
                   router.push("/");
                   router.refresh();
                 });
               }}
-              className="flex w-full items-center"
-            >
-              <LogoutButton/>
+              className="w-full"
+            ><LogOut className="h-4 w-4 mr-2" />
+              <LogoutButton />
             </div>
           </DropdownMenuItem>
         </DropdownMenuContent>

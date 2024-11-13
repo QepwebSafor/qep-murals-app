@@ -63,16 +63,14 @@ export default function UserEditForm({
   };
 
   return (
-    <div className="md:rounded-2xl p-6 shadow-input  ">
+    <div className="md:rounded-2xl px-15 shadow-input text-right ">
       <Button
         onClick={() => setOnActive(!onActive)}
-        className="uppercase   text-2xl"
-      >
-        actualizar
-      </Button>
+        className="uppercase   pb-6 "
+      >editarr</Button>
 
       {onActive && (
-        <div className="container text-left mt-4 justify-center max-w-min flex-wrap mx-auto  ">
+        <div className=" text-left mt-4 justify-center max-w-min flex-wrap mx-auto  ">
           <form onSubmit={onSubmit}>
             <p >
               Cambiar avatar:
@@ -107,7 +105,7 @@ export default function UserEditForm({
               onChange={handleChange}
             />
 
-            <div className="flex justify-between items-center gap-4  ">
+            <div className="flex justify-between items-center   ">
               <Button
                 type="submit"
                 className=" uppercase  "

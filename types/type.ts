@@ -1,24 +1,32 @@
-import {  User, Comment } from "@prisma/client";
+import { Comment, User } from "@prisma/client";
 
+export type SafeComment = Omit<Comment, "createdAt"> & {
+  createdAt: string;
+  email:string;
+};
 
+// export type SafeReservation = Omit<
+//   "createdAt" | "startDate" | "endDate" | "listing"
+// > & {
+//   createdAt: string;
+//   startDate: string;
+//   endDate: string;
+//   listing: SafeComment;
+// };
 
 export type SafeUser = Omit<
   User,
-  "id" |"name "| "email" | "image" | "hashedpassword"  | "role" | "createdAt" | "updatedAt" | "emailVerified" 
+  "createdAt" | "updatedAt" | "emailVerified"
 > & {
-  id:string;
-  name : string;
-  email: string;   
-  image:  string;
-  hashedPassword: string;
-  role:string;
   createdAt: string;
   updatedAt: string;
   emailVerified: string | null;
+  
+
 };
-export type SafeComment = Omit<
+export type safeComment = Omit<
 Comment,
   "createdAt" > & {
   createdAt: string;
+  email: string | null;
   };
-

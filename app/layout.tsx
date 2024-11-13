@@ -9,8 +9,8 @@ import { TProvider } from "@/providers/toast-provider";
 const quicksand = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "QEP Dogs App",
-  description: "A private parking in Gandia Center"
+  title: "Movies App",
+  description: "Descubre la peliculas trending topic del momento"
 };
 
 export default function RootLayout({
@@ -25,7 +25,6 @@ export default function RootLayout({
           <Navbar />
           <TProvider />
           {children}
-         
         </Providers>
       </body>
     </html>

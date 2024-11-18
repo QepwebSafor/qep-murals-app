@@ -112,7 +112,7 @@ const AddTodoForm = ({ userId }: { userId: string | null }) => {
                           onCheckedChange={field.onChange}
                         />
                       </FormControl>
-                      <FormLabel className="text-sky-500">Completed</FormLabel>
+                      <FormLabel className="text-violet-500">Completed</FormLabel>
                     </div>
                     <FormDescription className="text-white">
                       Your to-do item will be uncompleted by default unless you

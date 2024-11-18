@@ -59,8 +59,8 @@ const EditTodoForm = ({ todo }: { todo: ITodo }) => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild className="ml-auto bg-sky-300">
-        <Button className="bg-sky-700">
+      <DialogTrigger asChild className="ml-auto bg-violet-300">
+        <Button className="bg-violet-700">
           <Pen   size={16} />
         </Button>
       </DialogTrigger>
@@ -98,7 +98,7 @@ const EditTodoForm = ({ todo }: { todo: ITodo }) => {
                         {...field}
                       />
                     </FormControl>
-                    <FormDescription className="text-sky-400">
+                    <FormDescription className="text-violet-400">
                       You can write a short description about your next todo.
                     </FormDescription>
                     <FormMessage />
@@ -120,7 +120,7 @@ const EditTodoForm = ({ todo }: { todo: ITodo }) => {
                       </FormControl>
                       <FormLabel>Completed</FormLabel>
                     </div>
-                    <FormDescription className="text-sky-400">
+                    <FormDescription className="text-violet-400">
                       Your to-do item will be uncompleted by default unless you
                       checked it.
                     </FormDescription>

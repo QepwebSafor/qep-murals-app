@@ -42,7 +42,7 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
       {user && (
         <DropdownMenuContent className="w-56 ">
           <DropdownMenuLabel>{user.name || "User"}</DropdownMenuLabel>
-          <DropdownMenuSeparator className="bg-sky-400" />
+          <DropdownMenuSeparator className="bg-violet-600" />
           <DropdownMenuGroup>
             <DropdownMenuItem asChild>
               <Link href="/admin/settings">
@@ -54,6 +54,12 @@ const UserButton: React.FC<UserButtonProps> = ({ user }) => {
               <Link href="/admin/todos">
                 <Settings className="mr-2 h-4 w-4" />
                 Todos
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/create">
+                <Settings className="mr-2 h-4 w-4" />
+                Add Post
               </Link>
             </DropdownMenuItem>
             {user.role === "ADMIN" && (

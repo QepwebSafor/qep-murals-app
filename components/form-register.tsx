@@ -98,7 +98,7 @@ const FormRegister = () => {
             Already have an account?{" "}
             </label>
             <Link
-              className="text-sm block font-semibold  text-red-500 hover:underline hover:text-sky-400"
+              className="text-sm block font-semibold  text-white underline hover:text-violet-400"
               href="/login"
             >
                Sign in

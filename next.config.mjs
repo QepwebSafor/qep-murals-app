@@ -12,7 +12,7 @@ const nextConfig = {
         hostname: "avatars.githubusercontent.com"
       },
       {
-        hostname: "themoviedb.or",
+        hostname: "coin-images.coingecko.com",
       },
       {
         hostname: "image.tmdb.org",

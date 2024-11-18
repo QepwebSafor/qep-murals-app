@@ -95,7 +95,7 @@ const FormLogin = ({ OAuthAccountNotLinked }: FormLoginProps) => {
               ¿Do not have an account?{" "}
             </label>
             <Link
-              className="text-sm block font-semibold  text-red-500 hover:underline hover:text-sky-500"
+              className="text-sm block font-semibold  text-white underline hover:text-violet-500"
               href="/register"
             >
               Signup

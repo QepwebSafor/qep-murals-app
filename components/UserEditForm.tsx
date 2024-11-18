@@ -67,13 +67,13 @@ export default function UserEditForm({
       <Button
         onClick={() => setOnActive(!onActive)}
         className="uppercase   pb-6 "
-      >editarr</Button>
+      >edit</Button>
 
       {onActive && (
         <div className=" text-left mt-4 justify-center max-w-min flex-wrap mx-auto  ">
           <form onSubmit={onSubmit}>
             <p >
-              Cambiar avatar:
+              Change avatar:
             </p>
 
             <ImageUpload
@@ -82,7 +82,7 @@ export default function UserEditForm({
             />
           
             <p>
-              Cambiar Nombre:
+              Change Name:
             </p>
             <Input
               placeholder="Name"
@@ -94,7 +94,7 @@ export default function UserEditForm({
             />
 
             <p>
-              Cambiar Email:
+              Change Email:
             </p>
             <Input
               placeholder="Email"
@@ -111,7 +111,7 @@ export default function UserEditForm({
                 className=" uppercase  "
                 disabled={isLoading}
               >
-                Enviar
+                Submit 
               </Button>
               <Button
                 type="button"
@@ -119,7 +119,7 @@ export default function UserEditForm({
                 className=" uppercase  "
                 disabled={isLoading}
               >
-                Cancelar
+                Cancel
               </Button>
             </div>
           </form>

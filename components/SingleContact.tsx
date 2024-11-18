@@ -17,7 +17,7 @@ function SingleContact({ key, data }: ContactProps) {
 
   return (
     <div
-      className="flex w-full sm:min-w-fit md:min-w-fit lg:min-w-fit gap-x-4   shadow-md shadow-black border border-sky-500 text-black bg-zinc-900 "
+      className="flex w-full sm:min-w-fit md:min-w-fit lg:min-w-fit gap-x-4   shadow-md shadow-black border border-violet-500  bg-zinc-900 "
       key={data.id}
     >
       <div className=" flex flex-col items-start justify-between  m-4">

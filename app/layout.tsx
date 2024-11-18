@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Providers from "./Providers";
 import Navbar from "@/components/navbar/Navbar";
 
-import "./globals.css";
+
 import { Quicksand } from "next/font/google";
 import { TProvider } from "@/providers/toast-provider";
-
+import "./globals.css";
 const quicksand = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Movies App",
-  description: "Descubre la peliculas trending topic del momento"
+  title: 'Murals and Criptos App',
+  description: 'A blog with graffitys all around the world',
 };
 
 export default function RootLayout({
@@ -24,8 +24,9 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <TProvider />
-          {children}
+          {children}     
         </Providers>
+        
       </body>
     </html>
   );

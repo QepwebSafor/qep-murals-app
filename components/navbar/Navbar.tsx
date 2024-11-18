@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import getCurrentUser from "@/actions/getCurrentUser";
 import Link from "next/link";
-import { Button } from "../ui/button";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,10 +26,10 @@ const Navbar = async () => {
   // Opcional: Si deseas ver cuando se ejecuta la llamada a /api/auth/session
 
   return (
-    <nav className="bg-zinc-900">
-      <div className="container  flex  ">
+    <nav className="bg-zinc-900 justify-between">
+      <div className="container flex  ">
         <Link href="/">
-          <div className=" flex-shrink-0 flex items-center m-2">
+          <div className="flex-shrink-0 flex items-center m-2">
             <Image
               src="/img/pnglogoxs.fw.png"
               alt="Qep"
@@ -42,7 +42,7 @@ const Navbar = async () => {
             {currentUser ? (
               <h3 className="px-3 py-6">Hello, {currentUser.name}</h3>
             ) : (
-              <h3 className="px-3 py-6">QEP Movies App</h3>
+              <h3 className="px-3 py-6"> Murals and Criptos</h3>
             )}
           </div>
         </Link>
@@ -72,21 +72,15 @@ function SignInButton() {
         <DropdownMenuGroup>
        
           <DropdownMenuItem asChild>
-            <Link href="/movies">
+            <Link href="/murals">
               <Clapperboard className="mr-2 h-4 w-4" />
-              Trends
+              Murals
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/categories">
+            <Link href="/criptos">
               <ListEnd className="mr-2 h-4 w-4" />
-              Categories
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/search">
-              <Search className="mr-2 h-4 w-4" />
-              Search
+              Criptos
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>

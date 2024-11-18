@@ -19,9 +19,9 @@ interface IProps {
 
 export default function TodosTable({ todos }: IProps) {
   return (
-    <Table className="font-bold bg-white border border-sky-800">
-      <TableCaption className="font-bold text-sky-600 ">A list of your todos.</TableCaption>
-      <TableHeader className="bg-sky-400 ">
+    <Table className="font-bold bg-white border border-violet-800">
+      <TableCaption className="font-bold text-violet-600 ">A list of your todos.</TableCaption>
+      <TableHeader className="bg-violet-400 ">
         <TableRow>
           {/* <TableHead>ID</TableHead> */}
           <TableHead className="font-bold text-black">Title</TableHead>
@@ -31,9 +31,9 @@ export default function TodosTable({ todos }: IProps) {
           <TableHead className="text-right ont-bold text-black">Actions</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody className="text-black border border-sky-600">
+      <TableBody className="text-black border border-violet-600">
         {todos.map((todo) => (
-          <TableRow key={todo?.id} className="border border-sky-800">
+          <TableRow key={todo?.id} className="border border-violet-800">
             {/* <TableCell className="font-medium">{todo?.id}</TableCell> */}
             <TableCell className={todo.completed ? "line-through" : ""}>
               {todo?.title}
@@ -53,7 +53,7 @@ export default function TodosTable({ todos }: IProps) {
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter className="bg-sky-300 text-black">
+      <TableFooter className="bg-violet-300 text-black">
         <TableRow>
           <TableCell colSpan={4}>Total</TableCell>
           <TableCell className="text-right">

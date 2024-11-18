@@ -100,7 +100,7 @@ export default function UserEditForm({
             <div className="flex justify-end text-left p-2 ">
               <Button
                 type="submit"
-                className=" uppercase text-sky-300 hover:text-white"
+                className=" uppercase text-violet-900 hover:text-black"
                 disabled={isLoading}
               >
                 Submit

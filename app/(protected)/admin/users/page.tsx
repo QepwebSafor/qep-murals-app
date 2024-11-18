@@ -18,7 +18,7 @@ const user = session?.user;
   return (
     <div className="container-fluid ">
      <h1 className="m-1">Users List</h1>
-     <div className="grid md:grid-cols-3   sm:grid-cols-2  xs:grid-cols-1 lg:grid-cols-4">
+     <div className="grid md:grid-cols-2   sm:grid-cols-1   lg:grid-cols-3 ">
     {users.map((item: any) => ( user &&
           (<SingleUser key={item.id} data={item} />)
         ))}

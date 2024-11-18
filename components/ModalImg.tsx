@@ -44,7 +44,7 @@ const ModalImg: React.FC<ModalImgProps> = ({ imageUrl, onClose }) => {
         >
           X
         </button>
-        <Image src={imageUrl} width={256} height={256} alt="Imagen en pantalla completa" className="w-full h-auto"/>
+        <Image src={imageUrl} width={400} height={400} alt="Imagen en pantalla completa" className="w-full h-auto"/>
       </div>
       </motion.div>
   );
